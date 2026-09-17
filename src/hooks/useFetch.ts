@@ -1,5 +1,4 @@
-import { useEffect } from "react";
-
+import { useEffect, useState } from "react";
 
 // create hook useFetch - needs to receive a URL and fetch data 
 function useFetch<T>(url: string){
@@ -24,14 +23,14 @@ function useFetch<T>(url: string){
 
       try {
         // ask the api for data
-        const respone = await fetch(url);
+        const res = await fetch(url);
 
-        if(!Response.ok) {
+        if(!res.ok) {
           throw new Error("Somthine went wrong while fetching data.")
         }
 
         //convert API response from JSON into JavaScript
-        const result = await Response.json();
+        const result = await res.json();
 
         //put API data into our data state
         setData(result);
