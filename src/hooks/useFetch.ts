@@ -26,7 +26,7 @@ function useFetch<T>(url: string){
         const res = await fetch(url);
 
         if(!res.ok) {
-          throw new Error("Somthine went wrong while fetching data.")
+          throw new Error("Somthing went wrong while fetching data.")
         }
 
         //convert API response from JSON into JavaScript
