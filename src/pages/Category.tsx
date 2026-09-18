@@ -23,7 +23,7 @@ function Category() {
 
   //error message
   if (error) {
-    return <p className="p=6 text-red-500">Error: {error}</p>
+    return <p className="p-6 text-red-500">Error: {error}</p>
   }
   //display recipes
   
