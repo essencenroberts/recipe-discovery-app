@@ -7,6 +7,7 @@ import RecipeDetails from './pages/RecipeDetails';
 import Favorites from './pages/Favorites';
 import SearchResults from './pages/SearchResults';
 import { FavoritesProvider } from './context/FavoritesContext';
+import Navbar from './components/NavBAr';
 
 function App() {
  
@@ -16,6 +17,8 @@ function App() {
       <h1>Recipe Discovery App</h1>
       <BrowserRouter>
         <FavoritesProvider>
+           
+           <Navbar />
            <Routes>
 
           <Route
@@ -36,7 +39,7 @@ function App() {
           />
 
           <Route
-            path="/search-results"
+            path="/search"
             element={<SearchResults />}
           />
         </Routes>

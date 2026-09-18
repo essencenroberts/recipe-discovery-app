@@ -1,6 +1,10 @@
 import { useParams, Link } from "react-router-dom";
 import useFetch from "../hooks/useFetch";
 import type { Recipe } from "../types/recipe";
+import Spinner from "../components/Spinner";
+import ErrorMessage from "../components/ErrorMessage";
+
+
 
 function Category() {
   // get categoryName from url
@@ -16,14 +20,15 @@ function Category() {
 
   // loading message
   if (loading) {
-    return (
-      <p className="p-6">Loading recipes...</p>
-    );
+    return
+      // <p className="p-6">Loading recipes...</p>
+      <Spinner />; 
   }
 
   //error message
   if (error) {
-    return <p className="p-6 text-red-500">Error: {error}</p>
+    return <ErrorMessage message={error} />;
+    // <p className="p-6 text-red-500">Error: {error}</p>
   }
   //display recipes
   
